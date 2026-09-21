@@ -111,7 +111,16 @@ A PID controller regulates wheel velocity, as shown in Fig.\ref{fig:sys_diag}.
     \label{fig:robot_motion}
 \end{figure}
 
+\section{Results and Discussion}
+The kinematic model and PID controller achieve accurate trajectory tracking in both simulation and experiments.
 
+\section{Conclusion}
+A kinematic and PID control model for differential drive AGVs was presented and validated through simulations and experiments.
 
+\section{Future Work}
+Future work includes wheel slip compensation, adaptive or model predictive control, real-time obstacle avoidance, and multi-robot coordination.
+
+\section*{Acknowledgment}
+The authors thank the Institute of Robotics Studies for laboratory support and colleagues who assisted with experiments.
 
 \end{document}
