@@ -1,10 +1,43 @@
-Kinematic and Control Analysis of Autonomous Ground Vehicles
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{float} 
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
 
+\title{Kinematic and Control Analysis of Autonomous Ground Vehicles}
 
+\author{\IEEEauthorblockN{A.G. Tharindu Gimras}
+\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
+\textit{University of Moratuwa} \\
+Moratuwa, Sri Lanka \\
+gimrasagt.19@uom.lk
+\and
+\IEEEauthorblockN{2\textsuperscript{nd} L. Engineer}
+\IEEEauthorblockA{\textit{Department of Mechanical Engineering} \\
+\textit{Institute of Robotics Studies}\\
+City, Country \\
+l.engineer@example.edu}
+}}
+
+\maketitle
+
+\begin{abstract}
 This paper studies the kinematics and PID-based velocity control of autonomous ground vehicles (AGVs). Simulation and experimental results verify accurate trajectory tracking.
+\end{abstract}
 
-Autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
+\begin{IEEEkeywords}
+autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
+\end{IEEEkeywords}
 
+\section{Introduction}
 Autonomous ground vehicles (AGVs) are widely used in logistics, agriculture, and surveillance. Accurate kinematic modeling is essential for precise motion control~\cite{siciliano}. Differential drive AGVs offer compact design and high maneuverability, but may experience wheel slip and stability issues at high speeds.
 
 \section{Literature Review}
@@ -13,3 +46,26 @@ Differential drive AGVs have been extensively studied for their simplicity and m
 \section{Methodology}
 \subsection{Kinematic Model}
 For a differential drive AGV with wheel radius $r$, the linear velocity is
+
+\begin{equation}
+    v = \frac{r}{2}(\omega_{R}+\omega_{L})
+\end{equation}
+
+\subsection{AGV Parameters}
+
+\begin{table}[H]
+\caption{AGV Parameters}
+\label{tab:robot_params}
+\centering
+\begin{tabular}{|l|c|c|}
+\hline
+Parameter & Symbol & Value \\ \hline
+Wheel radius & $r$ & 0.06 m \\ 
+Wheel separation & $L$ & 0.35 m \\ 
+Vehicle mass & $m$ & 12 kg \\ 
+Max motor torque & $\tau_{\max}$ & 2.5 N·m \\ 
+Max linear velocity & $v_{\max}$ & 1.2 m/s \\ \hline
+\end{tabular}
+\end{table}
+
+\end{document}
