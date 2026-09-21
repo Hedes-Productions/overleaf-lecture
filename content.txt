@@ -2,3 +2,5 @@ Kinematic and Control Analysis of Autonomous Ground Vehicles
 
 
 This paper studies the kinematics and PID-based velocity control of autonomous ground vehicles (AGVs). Simulation and experimental results verify accurate trajectory tracking.
+
+Autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
