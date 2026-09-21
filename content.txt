@@ -1,35 +1,56 @@
 \documentclass[conference]{IEEEtran}
-\IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
-\usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts}
-\usepackage{algorithmic}
-\usepackage{graphicx}
-\usepackage{textcomp}
-\usepackage{xcolor}
-\usepackage{float} 
-\usepackage{svg}
-\usepackage{algorithm}    
-\usepackage{algpseudocode}  
+
+\usepackage{graphicx}        
+% For including images (PNG, JPG, PDF, etc.) using \includegraphics.
+% This is the standard package for images in LaTeX. 
+% We use 'graphicx' because it provides flexible options like scaling, rotation, and clipping.
+% Other packages exist (like 'graphics'), but 'graphicx' is more modern and user-friendly.
+
 \usepackage[caption=false,font=footnotesize]{subfig}  
-\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
-    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+% For creating sub-figures within a single figure environment.
+% This allows multiple images side-by-side with separate captions.
+% The options:
+%   caption=false → avoids conflicts with IEEEtran caption formatting
+%   font=footnotesize → sets subfigure captions in smaller font for better layout
+% We use 'subfig' instead of older packages like 'subfigure' because 'subfigure' is obsolete and not compatible with newer LaTeX classes.
+
+\usepackage{amsmath}         
+% Provides enhanced math typesetting, like 'align', matrices, and equation numbering.
+
+\usepackage{cite}            
+% Improves numeric citation handling.
+% Automatically sorts and compresses numeric references, e.g., [1-3] instead of [1,2,3].
+
+\usepackage{algorithm}       
+% For creating floating algorithm environments in the document.
+
+\usepackage{algpseudocode}   
+% Provides commands to write pseudocode neatly inside the 'algorithm' environment.
+
+\usepackage{float}           
+% Allows precise control over figure/table placement using [H] specifier (here).
+
+\usepackage{svg}             
+% For including SVG (vector) images directly in LaTeX.
+% Vector images scale without losing quality, useful for diagrams created in Illustrator, Inkscape, or draw.io.
+
 \begin{document}
 
 \title{Kinematic and Control Analysis of Autonomous Ground Vehicles}
 
-\author{\IEEEauthorblockN{A.G. Tharindu Gimras}
-\IEEEauthorblockA{\textit{Department of Electrical Engineering} \\
-\textit{University of Moratuwa} \\
-Moratuwa, Sri Lanka \\
-gimrasagt.19@uom.lk
+\author{
+\IEEEauthorblockN{1\textsuperscript{st} J. Researcher}
+\IEEEauthorblockA{\textit{Department of Mechanical Engineering} \\
+\textit{Institute of Robotics Studies}\\
+City, Country \\
+j.researcher@example.edu}
 \and
 \IEEEauthorblockN{2\textsuperscript{nd} L. Engineer}
 \IEEEauthorblockA{\textit{Department of Mechanical Engineering} \\
 \textit{Institute of Robotics Studies}\\
 City, Country \\
 l.engineer@example.edu}
-}}
+}
 
 \maketitle
 
@@ -38,7 +59,7 @@ This paper studies the kinematics and PID-based velocity control of autonomous g
 \end{abstract}
 
 \begin{IEEEkeywords}
-autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
+Autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -50,13 +71,16 @@ Differential drive AGVs have been extensively studied for their simplicity and m
 \section{Methodology}
 \subsection{Kinematic Model}
 For a differential drive AGV with wheel radius $r$, the linear velocity is
-
 \begin{equation}
-    v = \frac{r}{2}(\omega_{R}+\omega_{L})
+    v = \frac{r}{2}(\omega_R + \omega_L),
 \end{equation}
+where $\omega_R$ and $\omega_L$ are the angular velocities of the right and left wheels. The global frame motion is
+\begin{align}
+    \dot{x} &= v \cos{\theta}, \\
+    \dot{y} &= v \sin{\theta}.
+\end{align}
 
 \subsection{AGV Parameters}
-
 \begin{table}[H]
 \caption{AGV Parameters}
 \label{tab:robot_params}
@@ -77,8 +101,8 @@ A PID controller regulates wheel velocity, as shown in Fig.\ref{fig:sys_diag}.
 
 \begin{figure}[H]
     \centering
-    \includesvg[width=0.5\linewidth]{img/sys_diag.drawio}
-    \caption{Enter Caption}
+    \includesvg[inkscapelatex=false,width=0.7\linewidth]{img/sys_diag.drawio}
+    \caption{Closed-loop velocity control diagram for the differential drive AGV.}
     \label{fig:sys_diag}
 \end{figure}
 
@@ -97,7 +121,6 @@ A PID controller regulates wheel velocity, as shown in Fig.\ref{fig:sys_diag}.
 \end{algorithm}
 
 \section{Experimental Setup}
-
 \begin{figure}[H]
     \centering
     \subfloat[Experimental setup]{%
@@ -122,5 +145,8 @@ Future work includes wheel slip compensation, adaptive or model predictive contr
 
 \section*{Acknowledgment}
 The authors thank the Institute of Robotics Studies for laboratory support and colleagues who assisted with experiments.
+
+\bibliographystyle{IEEEtran}
+\bibliography{references}
 
 \end{document}
