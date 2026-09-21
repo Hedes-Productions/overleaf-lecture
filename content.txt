@@ -6,3 +6,6 @@ This paper studies the kinematics and PID-based velocity control of autonomous g
 Autonomous ground vehicle, kinematics, PID control, trajectory tracking, motion planning.
 
 Autonomous ground vehicles (AGVs) are widely used in logistics, agriculture, and surveillance. Accurate kinematic modeling is essential for precise motion control~\cite{siciliano}. Differential drive AGVs offer compact design and high maneuverability, but may experience wheel slip and stability issues at high speeds.
+
+\section{Literature Review}
+Differential drive AGVs have been extensively studied for their simplicity and maneuverability. PID controllers are effective for velocity regulation~\cite{corke}, and optimization algorithms improve PID tuning~\cite{8976932}. These works motivate the implementation of a PID-based closed-loop controller with experimental validation.
