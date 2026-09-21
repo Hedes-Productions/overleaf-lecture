@@ -11,6 +11,7 @@
 \usepackage{svg}
 \usepackage{algorithm}    
 \usepackage{algpseudocode}  
+\usepackage[caption=false,font=footnotesize]{subfig}  
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 \begin{document}
@@ -94,6 +95,22 @@ A PID controller regulates wheel velocity, as shown in Fig.\ref{fig:sys_diag}.
 \EndWhile
 \end{algorithmic}
 \end{algorithm}
+
+\section{Experimental Setup}
+
+\begin{figure}[H]
+    \centering
+    \subfloat[Experimental setup]{%
+        \includegraphics[width=0.45\linewidth]{img/exp_set}%
+    }
+    \hfill
+    \subfloat[Simulated trajectory]{%
+        \includegraphics[width=0.45\linewidth]{img/sim_traj}%
+    }
+    \caption{Experimental and simulated AGV motion comparison.}
+    \label{fig:robot_motion}
+\end{figure}
+
 
 
 
