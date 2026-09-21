@@ -9,3 +9,7 @@ Autonomous ground vehicles (AGVs) are widely used in logistics, agriculture, and
 
 \section{Literature Review}
 Differential drive AGVs have been extensively studied for their simplicity and maneuverability. PID controllers are effective for velocity regulation~\cite{corke}, and optimization algorithms improve PID tuning~\cite{8976932}. These works motivate the implementation of a PID-based closed-loop controller with experimental validation.
+
+\section{Methodology}
+\subsection{Kinematic Model}
+For a differential drive AGV with wheel radius $r$, the linear velocity is
